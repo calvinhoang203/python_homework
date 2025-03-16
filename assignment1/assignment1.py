@@ -188,29 +188,33 @@ def hangman(secret, guess):
 
 def pig_latin(sentence):
     
+    # Rules:
+    # (1) If the string starts with a vowel (aeiou), "ay" is tacked onto the end. 
+    # (2) If the string starts with one or several consonants, they are moved to the end and "ay" is tacked on after them. 
+    # (3) "qu" is a special case, as both of them get moved to the end of the word, as if they were one consonant letter.
+    
     vowels = "aeiou"
     words = sentence.split()
     result = []
     try:
         for word in words:
-            # If the word starts with a vowel, just add "ay" at the end.
+            # if the word starts with a vowel, just add "ay" at the end.
             if word[0] in vowels:
                 result.append(word + "ay")
             else:
                 i = 0
-                # Move through the word until a vowel is found,
+                # move through the word until a vowel is foun
                 # treating "qu" as a single consonant sound.
                 while i < len(word):
                     if word[i] in vowels:
                         break
-                    # Special rule: if a 'q' is encountered and followed by a 'u',
+                    # if a 'q' is encountered and followed by a 'u'
                     # treat both letters as part of the initial consonant cluster.
                     if word[i] == 'q' and i + 1 < len(word) and word[i + 1] == 'u':
                         i += 2
                         break
                     i += 1
-                # Rearrange the word: move the leading consonant cluster to the end
-                # and add "ay".
+                # rearrange the word: move the leading consonant cluster to the end and add "ay".
                 result.append(word[i:] + word[:i] + "ay")
                 result = " ".join(result)
     except Exception as e:
