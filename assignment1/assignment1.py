@@ -25,10 +25,13 @@ def calc(a, b, operation = "multiply"):
             try:
                 total_calc = a / b
             except ZeroDivisionError:
-                total_calc = str()
                 total_calc = "You can't divide by 0!"
         elif operation == "modulo":
             total_calc = a % b
+        elif operation == "int_divide":
+            total_calc = int(a) / int(b)
+        elif operation == "power":
+            total_calc = a**b
     except Exception:
         total_calc = str()
         total_calc = "You can't multiply those values!"
@@ -162,10 +165,10 @@ def titleize(string):
                         new_words.append(word.lower())
                     else:
                         new_words.append(word.capitalize())
-            result = " ".join(new_words)
+            return " ".join(new_words)
         except Exception as e:
             print(f"Error: {e}")
-    return result
+    return
 
 # Task 9
 
@@ -213,11 +216,15 @@ def pig_latin(sentence):
                     if word[i] == 'q' and i + 1 < len(word) and word[i + 1] == 'u':
                         i += 2
                         break
+                    elif word[i] in vowels:
+                        break
                     i += 1
                 # rearrange the word
                 # move the leading consonant cluster to the end and add "ay"
                 result.append(word[i:] + word[:i] + "ay")
-                result = " ".join(result)
+        result = " ".join(result)
     except Exception as e:
             print(f"Error: {e}")
     return result
+
+
