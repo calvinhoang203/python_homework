@@ -31,6 +31,7 @@ task1_with_salary = pd.DataFrame({
     'Salary': [70000, 80000, 90000]
 })
 
+
 # Print the new dataframe
 print("Dataframe with salary:\n", task1_with_salary)
 
