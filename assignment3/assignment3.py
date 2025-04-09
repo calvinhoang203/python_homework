@@ -1,7 +1,6 @@
 import pandas as pd
 
 
-
 # Task 1
 # Create a dictionary
 
