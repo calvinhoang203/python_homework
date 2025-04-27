@@ -42,7 +42,7 @@ try:
         )
         """)
 
-        # Create Subscriptions table (join table)
+        # Create Subscriptions table
         cursor.execute("""
         CREATE TABLE IF NOT EXISTS subscriptions (
             subscription_id INTEGER PRIMARY KEY,
@@ -154,7 +154,7 @@ try:
         for row in cursor.fetchall():
             print(row)
 
-        # Retrieve magazines for a specific publisher (Example: 'Nature Press')
+        # Retrieve magazines for a specific publisher
         print("\nMagazines from Nature Press:")
         cursor.execute("""
         SELECT magazines.name
