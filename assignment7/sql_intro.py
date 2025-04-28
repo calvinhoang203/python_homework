@@ -8,6 +8,9 @@ try:
 except sqlite3.Error as e:
     print("Database connection failed:", e)
 
+
+
+
 # Task 2: Define Database Structure
 
 try:
@@ -57,6 +60,15 @@ try:
         print("Tables created successfully.")
 except sqlite3.Error as e:
     print("Error creating tables:", e)
+
+
+
+
+
+
+
+
+
 
 # Task 3: Populate Tables with Data
 
@@ -135,6 +147,11 @@ try:
         print("Sample data inserted successfully.")
 except sqlite3.Error as e:
     print("Error inserting data:", e)
+
+
+
+
+
 
 # Task 4: Write SQL Queries
 

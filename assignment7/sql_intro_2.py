@@ -1,4 +1,4 @@
-# Task 6: Read Data into a DataFrame and Analyze It
+# Task 6: Read Data into a DataFrame
 import pandas as pd
 import sqlite3
 
