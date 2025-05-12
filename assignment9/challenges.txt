@@ -1,0 +1,18 @@
+I ran into a few snags with Assignment 9:
+
+- Finding the right <li> on the Durham Library site took a lot of trial and error. I kept expanding elements in DevTools until I spotted the right class names.
+
+- Some parts of the pages loaded extra content with JavaScript. Adding time.sleep(2) and explicit waits made sure I scraped the final page.
+
+- Interpreting robots.txt was confusing at first. I opened it in a browser and checked online guides to confirm which URLs were off-limits.
+
+- Handling books with multiple authors meant grabbing all the author links and joining their names with semicolons.
+
+- Saving data to CSV and JSON threw errors until I remembered newline='' for CSV and indent=4 for JSON.
+
+- The OWASP Top Ten list needed XPath (using .. and following-sibling) instead of CSS selectors to grab each vulnerability.
+
+- I initially forgot to create the assignment9 Git branch. After rebasing, I set the upstream branch correctly.
+
+Breaking the work into small steps and testing each part in DevTools or Python helped me work through each issue.
+
