@@ -32,26 +32,38 @@ try:
     results = []
     for entry in entries:
         # Get the book title
-        title_el = entry.find_element(
+        title_els = entry.find_elements(
             By.CSS_SELECTOR,
-            "h2.cp-title a span.title-content"  
+            "h2.cp-title a span.title-content"
         )
-        title = title_el.text.strip()
-        
+        if title_els:
+            title = title_els[0].text.strip()
+        else:
+            title = "No title"
+
         # Get author(s)
         author_els = entry.find_elements(
             By.CSS_SELECTOR,
             "span.cp-by-author-block a"
         )
-        authors = "; ".join(a.text.strip() for a in author_els)
-        
+        if author_els:
+            author_list = []
+            for a in author_els:
+                author_list.append(a.text.strip())
+            authors = "; ".join(author_list)
+        else:
+            authors = "No authors"
+
         # Get format and year
-        fmt_el = entry.find_element(
+        fmt_els = entry.find_elements(
             By.CSS_SELECTOR,
             "span.display-info-primary"
         )
-        fmt_year = fmt_el.text.strip()
-        
+        if fmt_els:
+            fmt_year = fmt_els[0].text.strip()
+        else:
+            fmt_year = "No format/year"
+
         results.append({
             "Title": title,
             "Author": authors,
