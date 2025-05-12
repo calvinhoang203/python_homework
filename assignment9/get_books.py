@@ -30,23 +30,23 @@ try:
     print(f"Found {len(entries)} entries")
 
     results = []
-    for li in entries:
+    for entry in entries:
         # Get the book title
-        title_el = li.find_element(
+        title_el = entry.find_element(
             By.CSS_SELECTOR,
             "h2.cp-title a span.title-content"  
         )
         title = title_el.text.strip()
         
         # Get author(s)
-        author_els = li.find_elements(
+        author_els = entry.find_elements(
             By.CSS_SELECTOR,
             "span.cp-by-author-block a"
         )
         authors = "; ".join(a.text.strip() for a in author_els)
         
         # Get format and year
-        fmt_el = li.find_element(
+        fmt_el = entry.find_element(
             By.CSS_SELECTOR,
             "span.display-info-primary"
         )
@@ -62,13 +62,15 @@ try:
     df = pd.DataFrame(results)
     print(df)
     
-    # Task 4: Write out the Data (Save to CSV and JSON)
+    # Task 4: Write out the Data 
     df.to_csv("get_books.csv", index=False)
     with open("get_books.json", "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
-
+        
+        
 finally:
     driver.quit()
+
 
 
 
