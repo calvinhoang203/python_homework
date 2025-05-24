@@ -5,4 +5,5 @@ __pycache__/
 *.rb
 .vscode
 CACHEDIR.TAG
-.venv/
+.~venv/
+.venv~/

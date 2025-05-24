@@ -1,0 +1,16 @@
+1. Which sections are off-limits?
+    - Anything under `/w/` (that’s all the dynamic loader endpoints)
+    - Anything under `/api/` (except the few mobileview/docs URLs they explicitly allow)
+    - `/trap/`
+    - All pages starting with `/wiki/Special:` (and the localized variants like `/wiki/Spezial:`)
+
+2. Are there special rules for certain bots?
+    - MJ12bot gets a total ban (`Disallow: /`)
+    - Mediapartners-Google\ (Google ad bots) also blocked everywhere
+    - A long list of download and mirror bots (HTTrack, wget, WebReaper, etc.) are barred
+    - All others (“User-agent: *”) can fetch regular article content but must steer clear of the dynamic loader, API, trap, and Special pages
+
+3. Why robots.txt matters
+    - It’s basically the site owner’s “please don’t go here” sign. 
+    - Respecting it keeps their servers happy (no surprise traffic spikes) and avoids scraping parts they don’t want exposed. 
+    - Checking it first is just good web citizenship.
