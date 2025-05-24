@@ -9,7 +9,6 @@ import plotly.data as pldata
 df = pldata.gapminder()
 countries = df['country'].unique()
 
-
 # Create a Dash application
 app = Dash(__name__)
 server = app.server
