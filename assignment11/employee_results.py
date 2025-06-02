@@ -18,6 +18,7 @@ GROUP BY e.employee_id
 df = pd.read_sql_query(query, conn)
 conn.close()
 
+
 # Display the DataFrame
 df.plot(kind='bar', x='last_name', y='revenue', color='skyblue', title='Employee Revenue')
 plt.xlabel('Employee')

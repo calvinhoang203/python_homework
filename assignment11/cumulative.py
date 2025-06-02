@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import sqlite3
 
+
 # Load data from SQLite database
 conn = sqlite3.connect('../db/lesson.db')
 query = """

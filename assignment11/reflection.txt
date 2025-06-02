@@ -1,0 +1,7 @@
+# Task 6: Reflection
+
+1/ In my experience, static visualizations like line plots or bar charts using Matplotlib are great for quick snapshots of data. They’re simple and get the message across, but they’re limited because users can’t really interact with them. Interactive visualizations, on the other hand, let users explore data more deeply. Tools like Plotly allow zooming, hovering over points, and filtering, which makes it easier to spot patterns that might otherwise be missed.
+
+2/ Dashboards are powerful because they combine different data visualizations and filters into one interface. They make it possible to look at data from different angles and quickly adjust the view based on what you want to see. For example, I can use a dropdown or slider to filter by product or date range, and the charts update right away. This saves a lot of time and gives me insights without needing to rerun code or create new charts every time.
+
+3/ Plotly and Dash make it easier to present data to different audiences because they let the viewer explore the data for themselves. Instead of just showing a static chart in a meeting, I can share a dashboard where colleagues can click around and find what interests them. This makes the discussion more engaging and helps non-technical stakeholders understand the story behind the data. It turns a passive report into a conversation.
